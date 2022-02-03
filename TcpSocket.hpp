@@ -69,7 +69,7 @@ class TcpSocket : public Socket {
 
         bool receiveData(void *buf, size_t len)
         {
-            return (size_t)recv(_conn, (char *)buf, len, 0) == len;
+            return (size_t)recv(_conn, (char *)buf, len, MSG_WAITALL) == len;
         }
         bool isConnected()
         {
